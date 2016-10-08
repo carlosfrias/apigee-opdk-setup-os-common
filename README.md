@@ -3,7 +3,7 @@ Apigee OPDK Common OS Setup
 
 This roles setups a few additional operating system packages and configs that would allow OPDK to function properly and 
 for the system admin to have the tools needed to perform troubleshooting with greater ease. This role builds on the 
-bare bones setup performed by opdk-setup-os-minimum. 
+bare bones setup performed by apigee-opdk-setup-os-minimum. 
 
 Requirements
 ------------
@@ -27,7 +27,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: opdk-setup-os-common }
+         - { role: apigee-opdk-setup-os-common }
 
 License
 -------

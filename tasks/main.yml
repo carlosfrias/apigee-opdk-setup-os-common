@@ -1,5 +1,5 @@
 ---
-# tasks file for opdk-setup-os-common-extra
+# tasks file for apigee-opdk-setup-os-common-extra
 #- block:
 - name: Update yum os packages
   yum:
