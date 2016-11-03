@@ -1,25 +1,12 @@
 ---
 # tasks file for apigee-opdk-setup-os-common-extra
 #- block:
-- name: Update yum os packages
+- name: Update toubleshooting OS packages
+  become: yes
   yum:
     name: "{{ item }}"
     state: present
   with_items:
-  - bind-utils
-  - chkconfig
-  - curl
-  - sudo
-  - tar
-  - wget
-  - yum-utils
-  - grep
-  - rpm
-  - sed
-  - sudo
-  - unzip
-  - rsync
-  - which
   - lsof
   - nc
   - dos2unix
