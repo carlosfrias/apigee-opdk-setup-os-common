@@ -1,0 +1,52 @@
+---
+
+- block:
+  - name: Update toubleshooting OS packages
+    become: yes
+    yum:
+      name: "{{ item }}"
+      state: present
+    with_items:
+    - lsof
+    - nc
+    - dos2unix
+    - tcpdump
+    - tree
+    - telnet
+    - vim
+    environment:
+      http_proxy: "{{ http_proxy }}"
+      https_proxy: "{{ https_proxy }}"
+
+  rescue:
+
+    - name: expose baseurl in epel.repo definition
+      replace:
+         backup: yes
+         regexp: '^(#baseurl=)(.*)'
+         replace: 'baseurl=\2'
+         dest: '/etc/yum.repos.d/epel.repo'
+
+    - name: remove mirrorlist in epel.repo definition
+      replace:
+         backup: yes
+         regexp: '^(mirrorlist=)(.*)'
+         replace: '#mirrorlist=\2'
+         dest: /etc/yum.repos.d/epel.repo"
+
+    - name: Update toubleshooting OS packages
+      become: yes
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+      - lsof
+      - nc
+      - dos2unix
+      - tcpdump
+      - tree
+      - telnet
+      - vim
+      environment:
+        http_proxy: "{{ http_proxy }}"
+        https_proxy: "{{ https_proxy }}"
