@@ -1,7 +1,7 @@
 ---
 
 - block:
-  - name: Update toubleshooting OS packages
+  - name: Update troubleshooting OS packages
     become: yes
     yum:
       name: "{{ item }}"
@@ -34,7 +34,7 @@
          replace: '#mirrorlist=\2'
          dest: /etc/yum.repos.d/epel.repo"
 
-    - name: Update toubleshooting OS packages
+    - name: Update troubleshooting OS packages
       become: yes
       yum:
         name: "{{ item }}"
