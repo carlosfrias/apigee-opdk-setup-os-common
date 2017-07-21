@@ -7,3 +7,4 @@ os_packages:
 - tcpdump
 - telnet
 - vim
+- tree
