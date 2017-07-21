@@ -1,2 +1,9 @@
 ---
 # defaults file for apigee-opdk-setup-os-common-extra
+os_packages:
+- lsof
+- nc
+- dos2unix
+- tcpdump
+- telnet
+- vim

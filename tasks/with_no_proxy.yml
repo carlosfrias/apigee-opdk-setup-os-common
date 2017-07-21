@@ -6,14 +6,7 @@
     yum:
       name: "{{ item }}"
       state: present
-    with_items:
-    - lsof
-    - nc
-    - dos2unix
-    - tcpdump
-    - tree
-    - telnet
-    - vim
+    with_items: "{{ os_packages }}"
 
   rescue:
 
@@ -45,11 +38,4 @@
       yum:
         name: "{{ item }}"
         state: present
-      with_items:
-      - lsof
-      - nc
-      - dos2unix
-      - tcpdump
-      - tree
-      - telnet
-      - vim
+      with_items: "{{ os_packages }}"
