@@ -1,6 +1,7 @@
 ---
 # defaults file for apigee-opdk-setup-os-common-extra
 os_packages:
+- https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 - lsof
 - nc
 - dos2unix
