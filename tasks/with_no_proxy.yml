@@ -1,6 +1,4 @@
 ---
-
-
 - block:
   - name: Update toubleshooting OS packages
     become: yes
