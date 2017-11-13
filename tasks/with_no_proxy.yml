@@ -1,6 +1,6 @@
 ---
 - block:
-  - name: Update toubleshooting OS packages
+  - name: Update troubleshooting OS packages
     become: yes
     yum:
       name: "{{ item }}"
