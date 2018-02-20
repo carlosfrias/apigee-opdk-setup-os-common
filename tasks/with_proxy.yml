@@ -33,7 +33,7 @@
            backup: yes
            regexp: '^(mirrorlist=)(.*)'
            replace: '#mirrorlist=\2'
-           dest: /etc/yum.repos.d/epel.repo
+           dest: "/etc/yum.repos.d/epel.repo"
 
       when: epel.stat.exists
 
