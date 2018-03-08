@@ -1,7 +1,7 @@
 Apigee OPDK Common OS Setup
 =========
 
-This roles setups a few additional operating system packages and configs that would allow OPDK to function properly and 
+This roles setups operating system packages and configs that would allow OPDK to function properly and 
 for the system admin to have the tools needed to perform troubleshooting with greater ease. This role builds on the 
 bare bones setup performed by apigee-opdk-setup-os-minimum. 
 
