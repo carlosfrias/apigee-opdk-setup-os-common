@@ -1,21 +1,29 @@
 Apigee OPDK Common OS Setup
 =========
 
-This roles setups operating system packages and configs that would allow OPDK to function properly and 
-for the system admin to have the tools needed to perform troubleshooting with greater ease. This role builds on the 
-bare bones setup performed by apigee-opdk-setup-os-minimum. 
+This roles sets up operating system packages and configs with common tools used by system admins to carry out diagnostic 
+and troubleshooting. This role builds on the bare bones setup performed by apigee-opdk-setup-os-minimum. 
 
 Requirements
 ------------
-The installation of Apigee OPDK requires root access. Credentials must also be supplied to override the empty placeholders
-provided here. It is recommended that credentials be consolidated into a single credentials.yml file that can be stored 
-separately. It is assumed that files containing credentials are stored in the ~/.apigee folder. 
-
+This role requires elevated system privilege.
 
 Role Variables
 --------------
 
-No variables defined here
+
+
+The collection `os_packages` contains a list of the systems packages installed by this role: 
+
+    os_packages:
+    - lsof
+    - nc
+    - dos2unix
+    - tcpdump
+    - telnet
+    - vim
+    - tree
+
 
 Dependencies
 ------------
@@ -32,7 +40,7 @@ Example Playbook
 License
 -------
 
-Apache License Version 2.0, January 2004
+Apache 2.0
 
 Author Information
 ------------------
@@ -44,3 +52,8 @@ Carlos Frias
 
 This is not an officially supported Google product.
 <!-- END Google Required Disclaimer -->
+<!-- BEGIN Google How To Contribute -->
+# How to Contribute
+
+We'd love to accept your patches and contributions to this project. Please review our [guidelines](CONTRIBUTION.md).
+<!-- END Google How To Contribute -->
