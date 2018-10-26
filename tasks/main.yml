@@ -1,12 +1,25 @@
 ---
 # tasks file for apigee-opdk-setup-os-common
-- name: Update troubleshooting OS packages
-  become: yes
-  yum:
-    name: "{{ item }}"
-    state: present
-  with_items: "{{ os_packages }}"
-  environment:
-    http_proxy: "{{ http_proxy | default('') }}"
-    https_proxy: "{{ https_proxy | default('') }}"
-    no_proxy: "{{ no_proxy | default('') }}"
+- block:
+  - name: Update troubleshooting OS packages
+    become: yes
+    yum:
+      name: "{{ item }}"
+      state: present
+    with_items: "{{ os_packages }}"
+    environment:
+      http_proxy: "{{ http_proxy | default('') }}"
+      https_proxy: "{{ https_proxy | default('') }}"
+      no_proxy: "{{ no_proxy | default('') }}"
+  rescue:
+    - name: Update troubleshooting OS packages
+      become: yes
+      yum:
+        name: "{{ item }}"
+        state: present
+        disablerepo: "apigee-release,apigee-thirdparty"
+      with_items: "{{ os_packages }}"
+      environment:
+        http_proxy: "{{ http_proxy | default('') }}"
+        https_proxy: "{{ https_proxy | default('') }}"
+        no_proxy: "{{ no_proxy | default('') }}"
